@@ -13,13 +13,14 @@ Fix:
 mealie_backup_deploy/
 ├── .gitignore
 ├── README.md
-├── mealie.env              # Create only if using Okta (see mealie.env.example)
-├── mealie.env.example
-├── mealie_backup.sh        # (Important: stop Mealie before running this bash script)
-├── mealie_restore.sh       # Pulls image, restores from latest backup_YYMMDD_HHMMSS/
-└── backup_YYMMDD_HHMMSS/   # Created by backup script (gitignored)
-    ├── mealie.db           # SQLite database (recipes, users, settings)
-    └── recipe_images.tar.gz  # All recipe images
+├── mealie.env                    # (gitignored, only required if using Okta)
+├── mealie.env.example            # template for Okta integration, rename file to mealie.env
+├── mealie_backup.sh              # (Important: stop Mealie before running this bash script)
+├── mealie_restore.sh             # Pulls image, restores from latest backup_YYMMDD_HHMMSS/
+└── backups                       # (gitignored)
+    └── backup_YYMMDD_HHMMSS/     # Created by backup script (gitignored)
+        ├── mealie.db             # SQLite database (recipes, users, settings)
+        └── recipe_images.tar.gz  # All recipe images
 ```
 
 ## Backup
