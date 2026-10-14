@@ -7,7 +7,7 @@ IMAGE="ghcr.io/mealie-recipes/mealie:latest"
 DATA_DIR="$HOME/mealie/data"
 ENV_FILE="$SCRIPT_DIR/mealie.env"
 
-BACKUP_DIR=$(ls -dt "$SCRIPT_DIR"/backup_* 2>/dev/null | head -1)
+BACKUP_DIR=$(ls -dt "$SCRIPT_DIR"/backups/backup_* 2>/dev/null | head -1)
 if [ -z "$BACKUP_DIR" ]; then
    echo "❌ No backup folder found in $SCRIPT_DIR/"
    exit 1
